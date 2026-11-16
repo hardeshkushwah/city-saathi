@@ -129,5 +129,49 @@
     WhatsApp पर संपर्क करें
   </a>
 </footer>
+  
+<script type="module">
+import { createClient } from
+'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+// अपनी Supabase Project URL और Publishable Key भरो
+const SUPABASE_URL = 'YAHAN_PROJECT_URL';
+const SUPABASE_KEY = 'YAHAN_PUBLISHABLE_KEY';
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+window.signup = async function () {
+  const email = document.getElementById('signupEmail').value;
+  const password = document.getElementById('signupPassword').value;
+  const message = document.getElementById('authMessage');
+
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password
+  });
+
+  message.textContent = error
+    ? error.message
+    : 'अकाउंट बनाने की प्रक्रिया शुरू हो गई है। Email चेक करें।';
+};
+
+window.login = async function () {
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  const message = document.getElementById('authMessage');
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  message.textContent = error
+    ? error.message
+    : 'आप सफलतापूर्वक Login हो गए हैं!';
+};
+</script>
+</body>
+</html>
+
 </body>
 </html>
