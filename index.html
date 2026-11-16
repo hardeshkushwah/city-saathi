@@ -82,6 +82,43 @@
     </div>
   </main>
 
+<section style="background:white;padding:20px;margin:18px;border-radius:12px;">
+  <h2>👤 Customer Account</h2>
+  <h3>नया अकाउंट बनाएँ</h3>
+
+  <input id="signupEmail" type="email"
+    placeholder="अपना Email लिखें"
+    style="width:100%;padding:12px;margin:8px 0;">
+
+  <input id="signupPassword" type="password"
+    placeholder="Password बनाएँ"
+    style="width:100%;padding:12px;margin:8px 0;">
+
+  <button onclick="signup()"
+    style="background:#173b73;color:white;padding:12px;width:100%;border:0;border-radius:8px;">
+    Sign Up
+  </button>
+
+  <hr>
+
+  <h3>पहले से अकाउंट है? Login करें</h3>
+
+  <input id="loginEmail" type="email"
+    placeholder="अपना Email लिखें"
+    style="width:100%;padding:12px;margin:8px 0;">
+
+  <input id="loginPassword" type="password"
+    placeholder="अपना Password लिखें"
+    style="width:100%;padding:12px;margin:8px 0;">
+
+  <button onclick="login()"
+    style="background:#25a55b;color:white;padding:12px;width:100%;border:0;border-radius:8px;">
+    Login
+  </button>
+
+  <p id="authMessage"></p>
+</section>
+
 <footer>
   <p>© 2026 CITY SAATHI</p>
   <p>Made for Local India ❤️</p>
