@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Saathi</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      color: #172033;
+    }
+    header {
+      background: #173b73;
+      color: white;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 29px; }
+    header p { margin-bottom: 0; }
+    .search {
+      margin: 18px;
+      padding: 13px;
+      width: calc(100% - 36px);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    main { padding: 0 16px 25px; }
+    h2 { font-size: 21px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .item {
+      background: white;
+      border-radius: 12px;
+      padding: 18px 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px #0000000c;
+    }
+    .item span { font-size: 30px; }
+    .item h3 { font-size: 15px; margin-bottom: 5px; }
+    .item p { color: #687386; font-size: 12px; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #173b73;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏙️ CITY SAATHI</h1>
+    <p>आपका अपना शहर, आपकी हर जरूरत।</p>
+  </header>
+
+  <input class="search" type="search"
+    placeholder="दुकान, सामान या सर्विस खोजें...">
+
+  <main>
+    <h2>हमारी सेवाएँ</h2>
+    <div class="grid">
+      <div class="item"><span>🛒</span><h3>ऑनलाइन शॉपिंग</h3><p>लोकल दुकानों से खरीदारी</p></div>
+      <div class="item"><span>🔧</span><h3>इलेक्ट्रिशियन</h3><p>बिजली से जुड़े काम</p></div>
+      <div class="item"><span>🚰</span><h3>प्लंबर</h3><p>पानी और पाइप की सर्विस</p></div>
+      <div class="item"><span>❄️</span><h3>AC सर्विस</h3><p>AC रिपेयर और सर्विस</p></div>
+      <div class="item"><span>💇</span><h3>सैलून</h3><p>ब्यूटी और ग्रूमिंग</p></div>
+      <div class="item"><span>🧹</span><h3>होम क्लीनिंग</h3><p>घर की सफाई</p></div>
+      <div class="item"><span>📱</span><h3>मोबाइल रिपेयर</h3><p>मोबाइल की मरम्मत</p></div>
+      <div class="item"><span>🏪</span><h3>लोकल दुकानें</h3><p>अपने शहर की दुकानें</p></div>
+    </div>
+
+    <h2>हमारे शहर</h2>
+    <div class="item">
+      <h3>📍 सासनी | हाथरस | अलीगढ़</h3>
+      <p>अपने शहर की सेवाएँ एक ही जगह</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 CITY SAATHI</p>
+    <p>Made for Local India ❤️</p>
+  </footer>
+</body>
+</html>
