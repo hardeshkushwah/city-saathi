@@ -1,181 +1,158 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>City Saathi</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6fb;
-      color: #172033;
-    }
-    header {
-      background: #173b73;
-      color: white;
-      padding: 22px 16px;
-      text-align: center;
-    }
-    header h1 { margin: 0; font-size: 29px; }
-    header p { margin-bottom: 0; }
-    .search {
-      margin: 18px;
-      padding: 13px;
-      width: calc(100% - 36px);
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-    main { padding: 0 16px 25px; }
-    h2 { font-size: 21px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .item {
-      background: white;
-      border-radius: 12px;
-      padding: 18px 10px;
-      text-align: center;
-      box-shadow: 0 2px 8px #0000000c;
-    }
-    .item span { font-size: 30px; }
-    .item h3 { font-size: 15px; margin-bottom: 5px; }
-    .item p { color: #687386; font-size: 12px; }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #173b73;
-      color: white;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CITY SAATHI</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+header{background:#0759a5;color:white;padding:22px 15px;text-align:center}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0}
+nav{background:#03447f;padding:12px;text-align:center}
+nav a{color:white;text-decoration:none;margin:0 10px;font-weight:bold}
+.hero{padding:35px 15px;text-align:center;background:#e1efff}
+.hero h2{color:#0759a5}
+.container{max-width:850px;margin:auto;padding:18px}
+h2.section{text-align:center;color:#0759a5}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.card{background:white;padding:18px 10px;border-radius:12px;text-align:center;box-shadow:0 2px 8px #0001}
+.card b{display:block;margin-top:8px}
+form{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 8px #0001}
+input,select{width:100%;padding:12px;margin:8px 0;border:1px solid #bbb;border-radius:7px;font-size:16px}
+button{width:100%;padding:13px;background:#0875cf;color:white;border:0;border-radius:7px;font-size:16px;margin-top:8px}
+#authMessage{text-align:center;overflow-wrap:anywhere;margin-top:12px}
+.whatsapp{display:block;background:#168b48;color:white;text-align:center;padding:15px;border-radius:9px;text-decoration:none;font-weight:bold}
+footer{background:#03447f;color:white;text-align:center;padding:20px;margin-top:25px}
+</style>
 </head>
 <body>
-  <header>
-    <h1>🏙️ CITY SAATHI</h1>
-    <p>आपका अपना शहर, आपकी हर जरूरत।</p>
-  </header>
 
-  <input class="search" type="search"
-    placeholder="दुकान, सामान या सर्विस खोजें...">
+<header>
+<h1>🏙️ CITY SAATHI</h1>
+<p>आपका अपना शहर, आपकी हर जरूरत।</p>
+</header>
 
-  <main>
-    <h2>हमारी सेवाएँ</h2>
-    <div class="grid">
-      <div class="item"><span>🛒</span><h3>ऑनलाइन शॉपिंग</h3><p>लोकल दुकानों से खरीदारी</p></div>
-      <div class="item"><span>🔧</span><h3>इलेक्ट्रिशियन</h3><p>बिजली से जुड़े काम</p></div>
-      <div class="item"><span>🚰</span><h3>प्लंबर</h3><p>पानी और पाइप की सर्विस</p></div>
-      <div class="item"><span>❄️</span><h3>AC सर्विस</h3><p>AC रिपेयर और सर्विस</p></div>
-      <div class="item"><span>💇</span><h3>सैलून</h3><p>ब्यूटी और ग्रूमिंग</p></div>
-      <div class="item"><span>🧹</span><h3>होम क्लीनिंग</h3><p>घर की सफाई</p></div>
-      <div class="item"><span>📱</span><h3>मोबाइल रिपेयर</h3><p>मोबाइल की मरम्मत</p></div>
-      <div class="item"><span>🏪</span><h3>लोकल दुकानें</h3><p>अपने शहर की दुकानें</p></div>
-    </div>
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#account">Account</a>
+</nav>
 
-    <h2>हमारे शहर</h2>
-    <div class="item">
-      <h3>📍 सासनी | हाथरस | अलीगढ़</h3>
-      <p>अपने शहर की सेवाएँ एक ही जगह</p>
-    </div>
-    
-
-
-  </main>
-
-<section style="background:white;padding:20px;margin:18px;border-radius:12px;">
-  <h2>👤 Customer Account</h2>
-  <h3>नया अकाउंट बनाएँ</h3>
-
-  <input id="signupEmail" type="email"
-    placeholder="अपना Email लिखें"
-    style="width:100%;padding:12px;margin:8px 0;">
-
-  <input id="signupPassword" type="password"
-    placeholder="Password बनाएँ"
-    style="width:100%;padding:12px;margin:8px 0;">
-
-  <button onclick="signup()"
-    style="background:#173b73;color:white;padding:12px;width:100%;border:0;border-radius:8px;">
-    Sign Up
-  </button>
-
-  <hr>
-
-  <h3>पहले से अकाउंट है? Login करें</h3>
-
-  <input id="loginEmail" type="email"
-    placeholder="अपना Email लिखें"
-    style="width:100%;padding:12px;margin:8px 0;">
-
-  <input id="loginPassword" type="password"
-    placeholder="अपना Password लिखें"
-    style="width:100%;padding:12px;margin:8px 0;">
-
-  <button onclick="login()"
-    style="background:#25a55b;color:white;padding:12px;width:100%;border:0;border-radius:8px;">
-    Login
-  </button>
-
-  <p id="authMessage"></p>
+<section class="hero" id="home">
+<h2>अपने शहर की हर सुविधा एक जगह!</h2>
+<p>सासनी, हाथरस और अलीगढ़ के लोगों के लिए अपना डिजिटल साथी।</p>
 </section>
 
+<div class="container" id="services">
+<h2 class="section">हमारी सेवाएँ</h2>
+<div class="grid">
+<div class="card">🛍️<b>दुकानें</b><p>अपने आसपास की दुकानें</p></div>
+<div class="card">🔧<b>कारीगर</b><p>प्लंबर, इलेक्ट्रिशियन आदि</p></div>
+<div class="card">🏠<b>घर की सेवाएँ</b><p>घरेलू जरूरतों की सेवाएँ</p></div>
+<div class="card">🍔<b>खाना</b><p>स्थानीय भोजन और दुकानें</p></div>
+<div class="card">🚗<b>यातायात</b><p>स्थानीय यात्रा सेवाएँ</p></div>
+<div class="card">📢<b>स्थानीय जानकारी</b><p>अपने शहर की जानकारी</p></div>
+</div>
+
+<h2 class="section">अपना शहर चुनें</h2>
+<select id="city">
+<option>सासनी</option>
+<option>हाथरस</option>
+<option>अलीगढ़</option>
+</select>
+
+<h2 class="section" id="account">अपना अकाउंट बनाएँ / Login करें</h2>
+<form id="authForm">
+<input id="email" type="email" placeholder="अपना Email लिखें" required>
+<input id="password" type="password" placeholder="Password लिखें" required>
+<button type="button" id="signupBtn">Sign Up - नया अकाउंट बनाएँ</button>
+<button type="button" id="loginBtn">Login - पहले से अकाउंट है</button>
+<p id="authMessage"></p>
+</form>
+
+<h2 class="section">हमसे संपर्क करें</h2>
+<a class="whatsapp" href="https://wa.me/919758595891" target="_blank">WhatsApp पर संपर्क करें</a>
+</div>
+
 <footer>
-  <p>© 2026 CITY SAATHI</p>
-  <p>Made for Local India ❤️</p>
-  <p>Contact & WhatsApp Support</p>
-  <a href="https://wa.me/919758595891"
-     target="_blank"
-     style="display:inline-block;background:#25D366;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:bold;">
-    WhatsApp पर संपर्क करें
-  </a>
+<p>CITY SAATHI © 2026</p>
+<p>आपका अपना शहर, आपकी हर जरूरत।</p>
 </footer>
-  
+
 <script type="module">
-import { createClient } from
-'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-// अपनी Supabase Project URL और Publishable Key भरो
-const SUPABASE_URL = 'https://YOUR-PROJECT-ID.supabase.co';https://mlvddzxsqoypocbsotyh.supabasa.co
-const SUPABASE_KEY = 'YOUR-PUBLISHABLE-KEY';sb_publishable_syCJQ37JuGhbnql_Zs-new_MwCEOosW
+const SUPABASE_URL = "PASTE_PROJECT_URL_HERE";
+const SUPABASE_PUBLISHABLE_KEY = "PASTE_PUBLISHABLE_KEY_HERE";
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+const message = document.getElementById("authMessage");
 
-window.signup = async function () {
-  alert('Sign Up button working');
-  const email = document.getElementById('signupEmail').value;
-  const password = document.getElementById('signupPassword').value;
-  const message = document.getElementById('authMessage');
+let supabase = null;
+
+if (SUPABASE_URL.startsWith("https://") &&
+    SUPABASE_URL.endsWith(".supabase.co") &&
+    SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_")) {
+  supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+}
+
+document.getElementById("signupBtn").addEventListener("click", async () => {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  if (!supabase) {
+    message.textContent = "पहले Supabase Project URL और Publishable Key भरें।";
+    return;
+  }
+
+  if (!email || password.length < 6) {
+    message.textContent = "सही Email और कम से कम 6 अक्षर का Password भरें।";
+    return;
+  }
+
+  message.textContent = "Account बनाया जा रहा है...";
 
   const { data, error } = await supabase.auth.signUp({
     email,
     password
   });
 
-  message.textContent = error
-    ? error.message
-    : 'अकाउंट बनाने की प्रक्रिया शुरू हो गई है। Email चेक करें।';
-};
+  if (error) {
+    message.textContent = "Error: " + error.message;
+  } else {
+    message.textContent = "Sign Up सफल! अगर Email confirmation चालू है तो अपना Email चेक करें।";
+  }
+});
 
-window.login = async function () {
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
-  const message = document.getElementById('authMessage');
+document.getElementById("loginBtn").addEventListener("click", async () => {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  if (!supabase) {
+    message.textContent = "पहले Supabase Project URL और Publishable Key भरें।";
+    return;
+  }
+
+  if (!email || !password) {
+    message.textContent = "Email और Password भरें।";
+    return;
+  }
+
+  message.textContent = "Login हो रहा है...";
 
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password
   });
 
-  message.textContent = error
-    ? error.message
-    : 'आप सफलतापूर्वक Login हो गए हैं!';
-};
+  if (error) {
+    message.textContent = "Error: " + error.message;
+  } else {
+    message.textContent = "Login सफल हो गया!";
+  }
+});
 </script>
-
-</html>
 
 </body>
 </html>
