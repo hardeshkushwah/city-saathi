@@ -155,8 +155,8 @@ import { createClient } from
 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 // अपनी Supabase Project URL और Publishable Key भरो
-const SUPABASE_URL = 'https://mlvddzxsqoypocbsotyh.supabase.cosb_secret_-An6HfDnxYCyZkC-NTWNMw_R12XBsig
-const Publishable key   = 'https://mlvddzxsqoypocbsotyh.supabase.co/rest/v1/';sb_publishable_syCJQ37JuGhbnql_Zs-new_MwCEOosW
+const SUPABASE_URL = 'https://YOUR-PROJECT-ID.supabase.co';https://mlvddzxsqoypocbsotyh.supabasa.co
+const SUPABASE_KEY = 'YOUR-PUBLISHABLE-KEY';sb_publishable_syCJQ37JuGhbnql_Zs-new_MwCEOosW
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -190,38 +190,7 @@ window.login = async function () {
     : 'आप सफलतापूर्वक Login हो गए हैं!';
 };
 </script>
-</body>
-  <script type="module">
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-const SUPABASE_URL = 'https://mlvddzxsqoypocbsotyh.supabase.co/rest/v1/';
-const Publishable key = https://mlvddzxsqoypocbsotyh.supabase.co/rest/v1/
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-
-window.signup = async function () {
-  const email = document.getElementById('signupEmail').value.trim();
-  const password = document.getElementById('signupPassword').value;
-  const message = document.getElementById('authMessage');
-
-  if (!email || password.length < 6) {
-    message.textContent = 'सही Email और कम से कम 6 अक्षर का Password डालें।';
-    return;
-  }
-
-  const { error } = await supabase.auth.signUp({ email, password });
-  message.textContent = error ? error.message : 'अकाउंट प्रक्रिया शुरू हुई। Email confirmation देखें।';
-};
-
-window.login = async function () {
-  const email = document.getElementById('loginEmail').value.trim();
-  const password = document.getElementById('loginPassword').value;
-  const message = document.getElementById('authMessage');
-
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
-  message.textContent = error ? error.message : 'आप सफलतापूर्वक Login हो गए हैं!';
-};
-  </script>
 </html>
 
 </body>
