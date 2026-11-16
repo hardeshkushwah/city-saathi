@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CITY SAATHI</title>
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
@@ -22,11 +24,13 @@ h2.section{text-align:center;color:#0759a5}
 form{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 8px #0001}
 input,select{width:100%;padding:12px;margin:8px 0;border:1px solid #bbb;border-radius:7px;font-size:16px}
 button{width:100%;padding:13px;background:#0875cf;color:white;border:0;border-radius:7px;font-size:16px;margin-top:8px}
+button:disabled{opacity:.6}
 #authMessage{text-align:center;overflow-wrap:anywhere;margin-top:12px}
 .whatsapp{display:block;background:#168b48;color:white;text-align:center;padding:15px;border-radius:9px;text-decoration:none;font-weight:bold}
 footer{background:#03447f;color:white;text-align:center;padding:20px;margin-top:25px}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -46,7 +50,9 @@ footer{background:#03447f;color:white;text-align:center;padding:20px;margin-top:
 </section>
 
 <div class="container" id="services">
+
 <h2 class="section">हमारी सेवाएँ</h2>
+
 <div class="grid">
 <div class="card">🛍️<b>दुकानें</b><p>अपने आसपास की दुकानें</p></div>
 <div class="card">🔧<b>कारीगर</b><p>प्लंबर, इलेक्ट्रिशियन आदि</p></div>
@@ -57,6 +63,7 @@ footer{background:#03447f;color:white;text-align:center;padding:20px;margin-top:
 </div>
 
 <h2 class="section">अपना शहर चुनें</h2>
+
 <select id="city">
 <option>सासनी</option>
 <option>हाथरस</option>
@@ -64,16 +71,23 @@ footer{background:#03447f;color:white;text-align:center;padding:20px;margin-top:
 </select>
 
 <h2 class="section" id="account">अपना अकाउंट बनाएँ / Login करें</h2>
+
 <form id="authForm">
 <input id="email" type="email" placeholder="अपना Email लिखें" required>
-<input id="password" type="password" placeholder="Password लिखें" required>
+<input id="password" type="password" placeholder="Password लिखें (कम से कम 6 अक्षर)" required>
+
 <button type="button" id="signupBtn">Sign Up - नया अकाउंट बनाएँ</button>
 <button type="button" id="loginBtn">Login - पहले से अकाउंट है</button>
-<p id="authMessage"></p>
+
+<p id="authMessage">वेबसाइट तैयार हो रही है...</p>
 </form>
 
 <h2 class="section">हमसे संपर्क करें</h2>
-<a class="whatsapp" href="https://wa.me/919758595891" target="_blank">WhatsApp पर संपर्क करें</a>
+
+<a class="whatsapp" href="https://wa.me/919758595891" target="_blank" rel="noopener">
+WhatsApp पर संपर्क करें
+</a>
+
 </div>
 
 <footer>
@@ -81,78 +95,111 @@ footer{background:#03447f;color:white;text-align:center;padding:20px;margin-top:
 <p>आपका अपना शहर, आपकी हर जरूरत।</p>
 </footer>
 
-<script type="module">
-    document.getElementById("authMessage").textContent = "JavaScript चल रही है";
-    alert("JavaScript started");
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+<!-- Supabase Browser Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-const SUPABASE_URL = https://mlvddzxsqoypocbsotyh.supabasa.co";
-const SUPABASE_PUBLISHABLE_KEY ="sb_publishable_syCJQ37JuGhbnql_Zs-new_MwCEOosW"
+<script>
+const SUPABASE_URL = "PASTE_PROJECT_URL_HERE";
+const SUPABASE_PUBLISHABLE_KEY = "PASTE_PUBLISHABLE_KEY_HERE";
 
 const message = document.getElementById("authMessage");
+const signupBtn = document.getElementById("signupBtn");
+const loginBtn = document.getElementById("loginBtn");
 
-let supabase = null;
+let supabaseClient = null;
 
-if (SUPABASE_URL.startsWith("https://") &&
-    SUPABASE_URL.endsWith(".supabase.co") &&
-    SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_")) {
-  supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+function showMessage(text) {
+  message.textContent = text;
 }
 
-document.getElementById("signupBtn").addEventListener("click", async () => {
-    alert("Sign Up button working");
+try {
+  if (!window.supabase) {
+    showMessage("Supabase की लाइब्रेरी लोड नहीं हुई। इंटरनेट चेक करें और Refresh करें।");
+  } else if (
+    SUPABASE_URL === "https://mlvddzxsqoypocbsotyh.supabasa.co" ||
+    SUPABASE_PUBLISHABLE_KEY === ""sb_publishable_syCJQ37JuGhbnql_Zs-new_MwCEOosW"
+  ) {
+    showMessage("पहले कोड में Supabase URL और Publishable Key भरें।");
+  } else {
+    supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+    showMessage("CITY SAATHI तैयार है। अब Signup या Login करें।");
+  }
+} catch (error) {
+  showMessage("Setup Error: " + error.message);
+}
+
+signupBtn.addEventListener("click", async function () {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
 
-  if (!supabase) {
-    message.textContent = "पहले Supabase Project URL और Publishable Key भरें।";
+  if (!supabaseClient) {
+    showMessage("Supabase सेटिंग जाँचें।");
     return;
   }
 
   if (!email || password.length < 6) {
-    message.textContent = "सही Email और कम से कम 6 अक्षर का Password भरें।";
+    showMessage("सही Email और कम से कम 6 अक्षर का Password भरें।");
     return;
   }
 
-  message.textContent = "Account बनाया जा रहा है...";
+  signupBtn.disabled = true;
+  showMessage("Account बनाया जा रहा है...");
 
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password
-  });
+  try {
+    const { data, error } = await supabaseClient.auth.signUp({
+      email: email,
+      password: password
+    });
 
-  if (error) {
-    message.textContent = "Error: " + error.message;
-  } else {
-    message.textContent = "Sign Up सफल! अगर Email confirmation चालू है तो अपना Email चेक करें।";
+    if (error) {
+      showMessage("Signup Error: " + error.message);
+    } else if (data.session) {
+      showMessage("आपका अकाउंट बन गया और Login भी हो गया!");
+    } else {
+      showMessage("अकाउंट बनाने की प्रक्रिया सफल! Email confirmation के लिए अपना Email चेक करें।");
+    }
+  } catch (error) {
+    showMessage("Error: " + error.message);
+  } finally {
+    signupBtn.disabled = false;
   }
 });
 
-document.getElementById("loginBtn").addEventListener("click", async () => {
+loginBtn.addEventListener("click", async function () {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
 
-  if (!supabase) {
-    message.textContent = "पहले Supabase Project URL और Publishable Key भरें।";
+  if (!supabaseClient) {
+    showMessage("Supabase सेटिंग जाँचें।");
     return;
   }
 
   if (!email || !password) {
-    message.textContent = "Email और Password भरें।";
+    showMessage("Email और Password भरें।");
     return;
   }
 
-  message.textContent = "Login हो रहा है...";
+  loginBtn.disabled = true;
+  showMessage("Login हो रहा है...");
 
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password
-  });
+  try {
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
 
-  if (error) {
-    message.textContent = "Error: " + error.message;
-  } else {
-    message.textContent = "Login सफल हो गया!";
+    if (error) {
+      showMessage("Login Error: " + error.message);
+    } else {
+      showMessage("Login सफल हो गया! आपका स्वागत है।");
+    }
+  } catch (error) {
+    showMessage("Error: " + error.message);
+  } finally {
+    loginBtn.disabled = false;
   }
 });
 </script>
