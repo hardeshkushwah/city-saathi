@@ -161,6 +161,7 @@ const SUPABASE_KEY = 'YOUR-PUBLISHABLE-KEY';sb_publishable_syCJQ37JuGhbnql_Zs-ne
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 window.signup = async function () {
+  alert('Sign Up button working');
   const email = document.getElementById('signupEmail').value;
   const password = document.getElementById('signupPassword').value;
   const message = document.getElementById('authMessage');
