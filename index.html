@@ -1,106 +1,9 @@
-
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CITY SAATHI</title>
-
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
-header{background:#0759a5;color:white;padding:22px 15px;text-align:center}
-header h1{margin:0;font-size:30px}
-header p{margin:8px 0 0}
-nav{background:#03447f;padding:12px;text-align:center}
-nav a{color:white;text-decoration:none;margin:0 10px;font-weight:bold}
-.hero{padding:35px 15px;text-align:center;background:#e1efff}
-.hero h2{color:#0759a5}
-.container{max-width:850px;margin:auto;padding:18px}
-h2.section{text-align:center;color:#0759a5}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
-.card{background:white;padding:18px 10px;border-radius:12px;text-align:center;box-shadow:0 2px 8px #0001}
-.card b{display:block;margin-top:8px}
-form{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 8px #0001}
-input,select{width:100%;padding:12px;margin:8px 0;border:1px solid #bbb;border-radius:7px;font-size:16px}
-button{width:100%;padding:13px;background:#0875cf;color:white;border:0;border-radius:7px;font-size:16px;margin-top:8px}
-button:disabled{opacity:.6}
-#authMessage{text-align:center;overflow-wrap:anywhere;margin-top:12px}
-.whatsapp{display:block;background:#168b48;color:white;text-align:center;padding:15px;border-radius:9px;text-decoration:none;font-weight:bold}
-footer{background:#03447f;color:white;text-align:center;padding:20px;margin-top:25px}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>🏙️ CITY SAATHI</h1>
-<p>आपका अपना शहर, आपकी हर जरूरत।</p>
-</header>
-
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#account">Account</a>
-</nav>
-
-<section class="hero" id="home">
-<h2>अपने शहर की हर सुविधा एक जगह!</h2>
-<p>सासनी, हाथरस और अलीगढ़ के लोगों के लिए अपना डिजिटल साथी।</p>
-</section>
-
-<div class="container" id="services">
-
-<h2 class="section">हमारी सेवाएँ</h2>
-
-<div class="grid">
-<div class="card">🛍️<b>दुकानें</b><p>अपने आसपास की दुकानें</p></div>
-<div class="card">🔧<b>कारीगर</b><p>प्लंबर, इलेक्ट्रिशियन आदि</p></div>
-<div class="card">🏠<b>घर की सेवाएँ</b><p>घरेलू जरूरतों की सेवाएँ</p></div>
-<div class="card">🍔<b>खाना</b><p>स्थानीय भोजन और दुकानें</p></div>
-<div class="card">🚗<b>यातायात</b><p>स्थानीय यात्रा सेवाएँ</p></div>
-<div class="card">📢<b>स्थानीय जानकारी</b><p>अपने शहर की जानकारी</p></div>
-</div>
-
-<h2 class="section">अपना शहर चुनें</h2>
-
-<select id="city">
-<option>सासनी</option>
-<option>हाथरस</option>
-<option>अलीगढ़</option>
-</select>
-
-<h2 class="section" id="account">अपना अकाउंट बनाएँ / Login करें</h2>
-
-<form id="authForm">
-<input id="email" type="email" placeholder="अपना Email लिखें" required>
-<input id="password" type="password" placeholder="Password लिखें (कम से कम 6 अक्षर)" required>
-
-<button type="button" id="signupBtn">Sign Up - नया अकाउंट बनाएँ</button>
-<button type="button" id="loginBtn">Login - पहले से अकाउंट है</button>
-
-<p id="authMessage">वेबसाइट तैयार हो रही है...</p>
-</form>
-
-<h2 class="section">हमसे संपर्क करें</h2>
-
-<a class="whatsapp" href="https://wa.me/919758595891" target="_blank" rel="noopener">
-WhatsApp पर संपर्क करें
-</a>
-
-</div>
-
-<footer>
-<p>CITY SAATHI © 2026</p>
-<p>आपका अपना शहर, आपकी हर जरूरत।</p>
-</footer>
-
 <!-- Supabase Browser Library -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-const SUPABASE_URL = "PASTE_PROJECT_URL_HERE";
-const SUPABASE_PUBLISHABLE_KEY = "PASTE_PUBLISHABLE_KEY_HERE";
+const SUPABASE_URL = "यहाँ अपना सही Project URL डालें";
+const SUPABASE_PUBLISHABLE_KEY = "यहाँ अपनी Publishable Key डालें";
 
 const message = document.getElementById("authMessage");
 const signupBtn = document.getElementById("signupBtn");
@@ -114,12 +17,13 @@ function showMessage(text) {
 
 try {
   if (!window.supabase) {
-    showMessage("Supabase की लाइब्रेरी लोड नहीं हुई। इंटरनेट चेक करें और Refresh करें।");
+    showMessage("Supabase Library लोड नहीं हुई।");
   } else if (
-    SUPABASE_URL === "https://mlvddzxsqoypocbsotyh.supabasa.co" ||
-    SUPABASE_PUBLISHABLE_KEY === ""sb_publishable_syCJQ37JuGhbnql_Zs-new_MwCEOosW"
+    !SUPABASE_URL.startsWith("https://") ||
+    !SUPABASE_URL.endsWith(".supabase.co") ||
+    !SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_")
   ) {
-    showMessage("पहले कोड में Supabase URL और Publishable Key भरें।");
+    showMessage("Project URL या Publishable Key गलत है।");
   } else {
     supabaseClient = window.supabase.createClient(
       SUPABASE_URL,
@@ -150,16 +54,16 @@ signupBtn.addEventListener("click", async function () {
 
   try {
     const { data, error } = await supabaseClient.auth.signUp({
-      email: email,
-      password: password
+      email,
+      password
     });
 
     if (error) {
       showMessage("Signup Error: " + error.message);
     } else if (data.session) {
-      showMessage("आपका अकाउंट बन गया और Login भी हो गया!");
+      showMessage("अकाउंट बन गया और Login हो गया!");
     } else {
-      showMessage("अकाउंट बनाने की प्रक्रिया सफल! Email confirmation के लिए अपना Email चेक करें।");
+      showMessage("अकाउंट बनाने की प्रक्रिया सफल! Email चेक करें।");
     }
   } catch (error) {
     showMessage("Error: " + error.message);
@@ -186,15 +90,15 @@ loginBtn.addEventListener("click", async function () {
   showMessage("Login हो रहा है...");
 
   try {
-    const { data, error } = await supabaseClient.auth.signInWithPassword({
-      email: email,
-      password: password
+    const { error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password
     });
 
     if (error) {
       showMessage("Login Error: " + error.message);
     } else {
-      showMessage("Login सफल हो गया! आपका स्वागत है।");
+      showMessage("Login सफल हो गया!");
     }
   } catch (error) {
     showMessage("Error: " + error.message);
@@ -202,10 +106,6 @@ loginBtn.addEventListener("click", async function () {
     loginBtn.disabled = false;
   }
 });
-</script>
-<script>
-document.getElementById("authMessage").innerText =
-"TEST SUCCESS - JavaScript Working";
 </script>
 </body>
 </html>
